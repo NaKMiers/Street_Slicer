@@ -1,0 +1,181 @@
+.header {
+   position: fixed;
+   top: 0;
+   left: 50%;
+   width: 100%;
+   transform: translateX(-50%);
+   height: 100px;
+
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.logo {
+   position: absolute;
+   top: 50%;
+   left: 5%;
+   transform: translateY(-50%);
+
+   display: flex;
+   align-items: center;
+
+   height: 100%;
+   width: 10em;
+
+   & > img {
+      width: 100%;
+   }
+}
+
+.menuBtn {
+   position: absolute;
+   top: 50%;
+   right: 5%;
+   transform: translateY(-50%);
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 6px;
+
+   & > div {
+      height: 4px;
+      width: 36px;
+      background: #fff;
+      transition: all 0.3s ease-in-out;
+   }
+
+   &.open > div {
+      &:first-of-type {
+         transform: rotate(45deg) translate(8px, 9px);
+      }
+
+      &:nth-of-type(2) {
+         opacity: 0;
+         transition: all 1s ease-in-out;
+      }
+
+      &:last-of-type {
+         transform: rotate(-45deg) translate(5px, -6px);
+      }
+   }
+}
+
+.menuModal {
+   position: fixed;
+   top: 0;
+   left: 0;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   width: 100%;
+   height: 100vh;
+   background: rgba(30, 44, 44, 0.96);
+
+   & > .header {
+      position: absolute;
+   }
+
+   &.open {
+      animation: fadeIn 0.3s ease-in-out;
+   }
+
+   &.close {
+      animation: fadeOut 0.3s ease-in-out;
+   }
+}
+
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 1;
+   }
+}
+
+@keyframes fadeOut {
+   from {
+      opacity: 1;
+   }
+   to {
+      opacity: 0;
+   }
+}
+
+@keyframes floatIn {
+   from {
+      opacity: 0;
+      transform: translateY(-4em);
+   }
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+@keyframes floatOut {
+   from {
+      opacity: 1;
+      transform: translateY(0);
+   }
+   to {
+      opacity: 0;
+      transform: translateY(4em);
+   }
+}
+
+.closeBtn {
+   position: absolute;
+   top: 50%;
+   right: 5%;
+   transform: translateY(-50%);
+
+   & > div {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      width: 36px;
+      height: 4px;
+      background: #fff;
+
+      &:first-of-type {
+         transform: rotate(45deg);
+      }
+
+      &:last-of-type {
+         transform: rotate(-45deg);
+      }
+   }
+}
+
+.menuBody {
+   text-align: center;
+
+   & > ul > li {
+      height: 4em;
+      line-height: 4em;
+
+      & > a {
+         font-size: 2rem;
+         font-weight: 700;
+
+         &.active {
+            color: #d8ef5b;
+         }
+      }
+   }
+
+   & > ul.open {
+      animation: floatIn 0.4s ease-in;
+   }
+
+   & > ul.close {
+      animation: floatOut 0.4s ease-in-out;
+   }
+}
