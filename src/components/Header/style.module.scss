@@ -2,13 +2,15 @@
    position: fixed;
    top: 0;
    left: 50%;
-   width: 100%;
+   z-index: 1;
    transform: translateX(-50%);
-   height: 100px;
 
    display: flex;
    justify-content: space-between;
    align-items: center;
+
+   width: 100%;
+   height: 100px;
 }
 
 .logo {
@@ -164,6 +166,7 @@
       & > a {
          font-size: 2rem;
          font-weight: 700;
+         text-transform: uppercase;
 
          &.active {
             color: #d8ef5b;

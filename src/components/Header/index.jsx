@@ -1,10 +1,14 @@
 import React, { useRef } from 'react'
+import { paths } from '../../data'
 import styles from './style.module.scss'
 
-function Header() {
+function Header({ handleSlide }) {
    const menuModalRef = useRef(null)
    const menuBtnRef = useRef(null)
    const modalNav = useRef(null)
+
+   const url = new URL(window.location.href)
+   const curPath = url.hash
 
    const handleShowMenu = () => {
       menuModalRef.current.classList.remove(styles.close)
@@ -17,7 +21,8 @@ function Header() {
       menuBtnRef.current.classList.add(styles.open)
    }
 
-   const handleHideMenu = () => {
+   const handleHideMenu = value => {
+      // animation: overlay and body
       menuModalRef.current.classList.remove(styles.open)
       menuModalRef.current.classList.add(styles.close)
       setTimeout(() => {
@@ -28,10 +33,14 @@ function Header() {
       modalNav.current.classList.add(styles.close)
 
       menuBtnRef.current.classList.remove(styles.open)
+
+      // change slide
+      handleSlide(value)
    }
 
    return (
       <header className={styles.header}>
+         {/* Nomal Header */}
          <div className={styles.logo}>
             <img src='/imgs/logo.png' alt='logo' />
          </div>
@@ -42,6 +51,7 @@ function Header() {
          </button>
 
          <div className={styles.menuModal} ref={menuModalRef} style={{ display: 'none' }}>
+            {/* Overlay Header */}
             <header className={styles.header}>
                <div className={styles.logo}>
                   <img src='/imgs/logo.png' alt='logo' />
@@ -54,41 +64,17 @@ function Header() {
 
             <div className={styles.menuBody}>
                <ul ref={modalNav}>
-                  <li>
-                     <a onClick={handleHideMenu} href='#specs'>
-                        SPECS
-                     </a>
-                  </li>
-                  <li>
-                     <a onClick={handleHideMenu} href='#wheels'>
-                        WHEELS
-                     </a>
-                  </li>
-                  <li>
-                     <a onClick={handleHideMenu} href='#in-action' className={styles.active}>
-                        IN ACTION
-                     </a>
-                  </li>
-                  <li>
-                     <a onClick={handleHideMenu} href='#choose-yours'>
-                        CHOOSE YOURS
-                     </a>
-                  </li>
-                  <li>
-                     <a onClick={handleHideMenu} href='#discount'>
-                        DISCOUNT
-                     </a>
-                  </li>
-                  <li>
-                     <a onClick={handleHideMenu} href='#reviews'>
-                        REVIEWS
-                     </a>
-                  </li>
-                  <li>
-                     <a onClick={handleHideMenu} href='#contact'>
-                        CONTACT
-                     </a>
-                  </li>
+                  {paths.map((path, index) => (
+                     <li>
+                        <a
+                           href={path.path}
+                           className={curPath === path.path ? styles.active : ''}
+                           onClick={() => handleHideMenu(index + 1)}
+                        >
+                           {path.label}
+                        </a>
+                     </li>
+                  ))}
                </ul>
             </div>
          </div>
