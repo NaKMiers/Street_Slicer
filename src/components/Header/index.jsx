@@ -35,7 +35,7 @@ function Header({ handleSlide }) {
       menuBtnRef.current.classList.remove(styles.open)
 
       // change slide
-      handleSlide(value)
+      value && handleSlide(value)
    }
 
    return (
@@ -56,7 +56,7 @@ function Header({ handleSlide }) {
                <div className={styles.logo}>
                   <img src='/imgs/logo.png' alt='logo' />
                </div>
-               <button className={styles.closeBtn} onClick={handleHideMenu}>
+               <button className={styles.closeBtn} onClick={() => handleHideMenu()}>
                   <div />
                   <div />
                </button>
@@ -65,7 +65,7 @@ function Header({ handleSlide }) {
             <div className={styles.menuBody}>
                <ul ref={modalNav}>
                   {paths.map((path, index) => (
-                     <li>
+                     <li key={path.path}>
                         <a
                            href={path.path}
                            className={curPath === path.path ? styles.active : ''}
