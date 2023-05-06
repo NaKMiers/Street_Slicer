@@ -21,7 +21,6 @@
       font-size: 4.8rem;
       color: #d8ef5b;
       transition: font-size 0.3s ease-in-out;
-      animation: animation1 1.3s ease-in-out;
    }
 
    & > p:nth-of-type(2) {
@@ -32,7 +31,6 @@
       letter-spacing: -0.5px;
       transform-origin: left;
       transition: font-size 0.3s ease-in-out;
-      animation: animation2 1.33s ease-in-out;
    }
 
    & > p:nth-of-type(3) {
@@ -41,7 +39,6 @@
       text-transform: uppercase;
       transform-origin: right;
       transition: font-size 0.3s ease-in-out;
-      animation: animation3 1.36s ease-in-out;
    }
 
    & > button {
@@ -56,11 +53,28 @@
       text-transform: uppercase;
 
       transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
-      animation: animation4 1.4s ease-in-out;
 
       &:hover {
          background: #fff;
          color: #000;
+      }
+   }
+
+   &.active {
+      & > p:nth-of-type(1) {
+         animation: animation0 1.2s ease-in-out;
+      }
+
+      & > p:nth-of-type(2) {
+         animation: animation2 1.23s ease-in-out;
+      }
+
+      & > p:nth-of-type(3) {
+         animation: animation3 1.26s ease-in-out;
+      }
+
+      & > button {
+         animation: animation4 1.3s ease-in-out;
       }
    }
 
@@ -81,7 +95,7 @@
    }
 }
 
-@keyframes animation1 {
+@keyframes animation0 {
    from {
       opacity: 0;
       transform: translate(32%, -272%) rotate(44deg);
@@ -95,7 +109,7 @@
 @keyframes animation2 {
    from {
       opacity: 0;
-      transform: translate(0%, 63%) rotate(40deg);
+      transform: translate(0%, 120%) rotate(40deg);
    }
    to {
       opacity: 1;

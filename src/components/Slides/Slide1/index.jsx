@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './style.module.scss'
 
 function Slide1() {
+   const [active] = useState(false)
+
    return (
       <section className={`${styles.section} ${styles.section1}`}>
-         <div className={styles.main}>
+         <div className={`${styles.main} ${active ? styles.active : ''}`}>
             <p>We believe in</p>
             <p>FUN, FAST, SIMPLE TRANSPORTATION</p>
             <p>FOR EVERYONE</p>
