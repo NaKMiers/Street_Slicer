@@ -4,11 +4,10 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   scroll-snap-align: start;
    background-size: cover !important;
 
    &.section6 {
-      background: url('../../../../public/imgs/background6.jpg') no-repeat center fixed;
+      background: url('../../../assets/imgs/background6.jpg') no-repeat center fixed;
       color: #fff;
    }
 }

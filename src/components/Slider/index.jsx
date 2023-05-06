@@ -23,50 +23,59 @@ function Slider({ slide, handleSlide }) {
       handleSlide(index + 1, false)
    }, [curPath, handleSlide])
 
+   // update slide
    useEffect(() => {
       slideTrackRef.current.style.marginTop = `calc(-100vh * ${slide})`
    }, [slide])
+
+   const nextSlide = useCallback(() => {
+      // change to next slide
+      // if last slide
+      if (slide === slideLength) {
+         handleSlide(maxSlideIndex)
+         console.log(11111)
+
+         setTimeout(() => {
+            slideTrackRef.current.style.transition = 'none'
+            handleSlide(1)
+         }, 1010)
+
+         setTimeout(() => {
+            slideTrackRef.current.style.transition = 'all 1s ease-in-out'
+         }, 1050)
+      } else {
+         handleSlide(slide + 1)
+      }
+   }, [handleSlide, slide])
+
+   const prevSlide = useCallback(() => {
+      // change to prev slide
+      // if first slide
+      if (slide === 1) {
+         handleSlide(0)
+         console.log(22222)
+
+         setTimeout(() => {
+            slideTrackRef.current.style.transition = 'none'
+            handleSlide(slideLength)
+         }, 1010)
+
+         setTimeout(() => {
+            slideTrackRef.current.style.transition = 'all 1s ease-in-out'
+         }, 1050)
+      } else {
+         handleSlide(slide - 1)
+      }
+   }, [handleSlide, slide])
 
    const handleWheel = useCallback(
       e => {
          if (!isSliding) {
             setSliding(true)
             if (e.deltaY > 0) {
-               // change to next slide
-               // if last slide
-               if (slide === slideLength) {
-                  handleSlide(maxSlideIndex)
-                  console.log(11111)
-
-                  setTimeout(() => {
-                     slideTrackRef.current.style.transition = 'none'
-                     handleSlide(1)
-                  }, 1010)
-
-                  setTimeout(() => {
-                     slideTrackRef.current.style.transition = 'all 1s ease-in-out'
-                  }, 1050)
-               } else {
-                  handleSlide(slide + 1)
-               }
+               nextSlide()
             } else if (e.deltaY < 0) {
-               // change to prev slide
-               // if first slide
-               if (slide === 1) {
-                  handleSlide(0)
-                  console.log(22222)
-
-                  setTimeout(() => {
-                     slideTrackRef.current.style.transition = 'none'
-                     handleSlide(slideLength)
-                  }, 1010)
-
-                  setTimeout(() => {
-                     slideTrackRef.current.style.transition = 'all 1s ease-in-out'
-                  }, 1050)
-               } else {
-                  handleSlide(slide - 1)
-               }
+               prevSlide()
             }
 
             setTimeout(() => {
@@ -74,16 +83,39 @@ function Slider({ slide, handleSlide }) {
             }, 1050) // slideTract duration 1s
          }
       },
-      [handleSlide, isSliding, slide]
+      [isSliding, nextSlide, prevSlide]
+   )
+
+   const handleKeyDown = useCallback(
+      e => {
+         if (!isSliding) {
+            setSliding(true)
+            if (e.keyCode === 40) {
+               console.log('down')
+               nextSlide()
+            } else if (e.keyCode === 38) {
+               console.log('up')
+               prevSlide()
+            }
+            setTimeout(() => {
+               setSliding(false)
+            }, 1050) // slideTract duration 1s
+         }
+      },
+      [isSliding, nextSlide, prevSlide]
    )
 
    // change slide on wheel
    useEffect(() => {
+      // handle slide on wheel and press arrow keys
       window.addEventListener('wheel', handleWheel)
+      window.addEventListener('keydown', handleKeyDown)
+
       return () => {
          window.removeEventListener('wheel', handleWheel)
+         window.removeEventListener('keydown', handleKeyDown)
       }
-   }, [handleWheel])
+   }, [handleWheel, handleKeyDown])
 
    return (
       <div className={styles.Slider}>

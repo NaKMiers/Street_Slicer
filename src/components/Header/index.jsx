@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import { paths } from '../../data'
 import styles from './style.module.scss'
+import logo from '../../assets/imgs/logo.png'
 
 function Header({ handleSlide }) {
    const menuModalRef = useRef(null)
@@ -42,7 +43,7 @@ function Header({ handleSlide }) {
       <header className={styles.header}>
          {/* Nomal Header */}
          <div className={styles.logo}>
-            <img src='/imgs/logo.png' alt='logo' />
+            <img src={logo} alt='logo' />
          </div>
          <button className={styles.menuBtn} onClick={handleShowMenu} ref={menuBtnRef}>
             <div />
@@ -54,7 +55,7 @@ function Header({ handleSlide }) {
             {/* Overlay Header */}
             <header className={styles.header}>
                <div className={styles.logo}>
-                  <img src='/imgs/logo.png' alt='logo' />
+                  <img src={logo} alt='logo' />
                </div>
                <button className={styles.closeBtn} onClick={() => handleHideMenu()}>
                   <div />
