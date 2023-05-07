@@ -112,6 +112,7 @@ function Slider({ slide, handleSlide }) {
       window.addEventListener('keydown', handleKeyDown)
 
       return () => {
+         console.log('cleanup')
          window.removeEventListener('wheel', handleWheel)
          window.removeEventListener('keydown', handleKeyDown)
       }
