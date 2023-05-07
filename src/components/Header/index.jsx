@@ -3,7 +3,7 @@ import { paths } from '../../data'
 import styles from './style.module.scss'
 import logo from '../../assets/imgs/logo.png'
 
-function Header({ handleSlide }) {
+function Header({ handleSlide, setOpenMenu }) {
    const menuModalRef = useRef(null)
    const menuBtnRef = useRef(null)
    const modalNav = useRef(null)
@@ -12,6 +12,7 @@ function Header({ handleSlide }) {
    const curPath = url.hash
 
    const handleShowMenu = () => {
+      setOpenMenu(true)
       menuModalRef.current.classList.remove(styles.close)
       menuModalRef.current.style.display = 'flex'
       menuModalRef.current.classList.add(styles.open)
@@ -37,6 +38,7 @@ function Header({ handleSlide }) {
 
       // change slide
       value && handleSlide(value)
+      setOpenMenu(false)
    }
 
    return (

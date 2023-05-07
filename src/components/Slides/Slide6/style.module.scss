@@ -5,6 +5,7 @@
    justify-content: center;
    align-items: center;
    background-size: cover !important;
+   overflow: hidden; //
 
    &.section6 {
       background: url('../../../assets/imgs/background6.jpg') no-repeat center fixed;

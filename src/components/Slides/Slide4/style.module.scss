@@ -5,6 +5,7 @@
    justify-content: center;
    align-items: center;
    background-size: cover !important;
+   overflow: hidden; //
 
    &.section4 {
       color: #fff;
@@ -15,7 +16,6 @@
    position: relative;
    text-align: center;
    width: 100%;
-   // background: #ccc;
 
    & > p:nth-of-type(1) {
       position: absolute;

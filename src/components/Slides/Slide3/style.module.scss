@@ -3,6 +3,7 @@
    height: 100%;
    display: flex;
    background-size: cover !important;
+   overflow: hidden; //
 
    &.section3 {
       background: url('../../../assets/imgs/background3.jpg') no-repeat center fixed;

@@ -7,6 +7,7 @@ import { maxSlideIndex, paths } from './data'
 
 function App() {
    const [slide, setSlide] = useState(1)
+   const [openMenu, setOpenMenu] = useState(false)
 
    const handleSlide = useCallback((value, updatePath = true) => {
       // update path url
@@ -24,13 +25,13 @@ function App() {
    return (
       <div className={styles.App}>
          {/* HEADER */}
-         <Header handleSlide={handleSlide} />
+         <Header handleSlide={handleSlide} setOpenMenu={setOpenMenu} />
 
          {/* NAV SLIDER */}
          <NavSlider slide={slide} handleSlide={handleSlide} />
 
          {/* SLIDER */}
-         <Slider slide={slide} handleSlide={handleSlide} />
+         <Slider slide={slide} handleSlide={handleSlide} isMenuOpen={openMenu} />
       </div>
    )
 }

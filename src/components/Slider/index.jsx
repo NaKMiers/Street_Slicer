@@ -3,7 +3,7 @@ import styles from './style.module.scss'
 import { maxSlideIndex, paths, slideLength } from '../../data'
 import { Slide1, Slide2, Slide3, Slide4, Slide5, Slide6, Slide7, Slide8 } from '../Slides'
 
-function Slider({ slide, handleSlide }) {
+function Slider({ slide, handleSlide, isMenuOpen }) {
    const [curPath, setCurPath] = useState('#welcome')
    const [isSliding, setSliding] = useState(false)
    const slideTrackRef = useRef(null)
@@ -70,7 +70,7 @@ function Slider({ slide, handleSlide }) {
 
    const handleWheel = useCallback(
       e => {
-         if (!isSliding) {
+         if (!isSliding && !isMenuOpen) {
             setSliding(true)
             if (e.deltaY > 0) {
                nextSlide()
@@ -83,7 +83,7 @@ function Slider({ slide, handleSlide }) {
             }, 1050) // slideTract duration 1s
          }
       },
-      [isSliding, nextSlide, prevSlide]
+      [isSliding, isMenuOpen, nextSlide, prevSlide]
    )
 
    const handleKeyDown = useCallback(

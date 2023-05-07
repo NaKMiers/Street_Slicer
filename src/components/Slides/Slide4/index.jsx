@@ -3,7 +3,7 @@ import styles from './style.module.scss'
 import video from '../../../assets/videos/background4.mp4'
 
 function Slide4() {
-   const [active] = useState(true)
+   const [active] = useState(false)
 
    return (
       <section className={`${styles.section} ${styles.section4}`}>

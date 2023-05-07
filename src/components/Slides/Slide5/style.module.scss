@@ -5,9 +5,238 @@
    justify-content: center;
    align-items: center;
    background-size: cover !important;
+   overflow: hidden; //
 
    &.section5 {
       background: url('../../../assets/imgs/background5.jpg') no-repeat center fixed;
       color: #fff;
+   }
+}
+
+.main {
+   max-height: 100vh;
+   max-width: 1170px;
+   width: 100%;
+   text-align: center;
+   margin-top: 50px;
+
+   // mobile horizontal
+   @media (max-height: 391px) {
+      width: 85%;
+   }
+}
+
+.title {
+   max-width: 665px;
+   font-size: 2.25em;
+   line-height: 53px;
+   font-weight: 300;
+   text-transform: uppercase;
+   margin: 0 auto 50px;
+
+   // tablet
+   @media (max-width: 1200px) {
+      font-size: 1.75em;
+      line-height: 42px;
+   }
+
+   // mobile
+   @media (max-width: 768px) {
+      display: none;
+   }
+
+   // tablet horizontal
+   @media (max-height: 620px) {
+      margin: 0 auto 25px;
+      font-size: 1.75em;
+      line-height: 42px;
+   }
+
+   // mobile horizontal
+   @media (max-height: 490px) {
+      display: none;
+   }
+}
+
+.productWrap {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin: 0 -1.1em;
+
+   // mobile
+   @media (max-width: 768px) {
+      flex-direction: column;
+   }
+}
+
+.product {
+   width: calc(100% / 3);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+   // mobile
+   @media (max-width: 768px) {
+      width: 60%;
+   }
+
+   & > .image {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 1em;
+
+      & > img {
+         max-width: 96px;
+      }
+
+      // mobile
+      @media (max-width: 768px) {
+         display: none;
+      }
+
+      // tablet horizontal
+      @media (max-height: 620px) {
+         margin-bottom: 0.5em;
+         & > img {
+            max-width: 72px;
+         }
+      }
+
+      // mobile horizontal
+      @media (max-height: 391px) {
+         margin-bottom: 0.5em;
+         & > img {
+            max-width: 60px;
+         }
+      }
+   }
+
+   & > span:nth-of-type(1) {
+      font-size: 1.5em;
+      font-weight: 700;
+      margin-bottom: 1em;
+
+      & > del {
+         font-size: 19px;
+         font-weight: 100;
+      }
+
+      // mobile
+      @media (max-width: 768px) {
+         margin-bottom: 0.5em;
+      }
+
+      // tablet horizontal
+      @media (max-height: 620px) {
+         margin-bottom: 0.3em;
+      }
+
+      // mobile horizontal
+      @media (max-height: 391px) {
+         margin-bottom: 0.3em;
+      }
+   }
+
+   & > span:nth-of-type(2) {
+      font-size: 1em;
+      font-weight: 700;
+      margin-bottom: 1.1em;
+      letter-spacing: 1px;
+
+      // mobile
+      @media (max-width: 768px) {
+         margin-bottom: 0;
+      }
+
+      // tablet horizontal
+      @media (max-height: 620px) {
+         margin-bottom: 0.8em;
+      }
+
+      // mobile horizontal
+      @media (max-height: 391px) {
+         margin-bottom: 0.8em;
+      }
+   }
+
+   & > button {
+      font-size: 14px;
+      font-weight: 600;
+      height: 40px;
+      border: 2px solid #fff;
+      border-radius: 5px;
+      padding: 0 17px;
+      margin: 25px 0;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+         background: #fff;
+         color: #000;
+      }
+
+      // mobile
+      @media (max-width: 768px) {
+         margin: 22px 0 28px;
+      }
+
+      // tablet horizontal
+      @media (max-height: 620px) {
+         margin: 0;
+      }
+
+      // mobile horizontal
+      @media (max-height: 391px) {
+         margin: 0;
+      }
+   }
+
+   &.product1 {
+      & > span:nth-of-type(1) {
+         color: #00dfe5;
+      }
+
+      & > button {
+         color: #00dfe5;
+         border-color: #00dfe5;
+
+         &:hover {
+            background: #00dfe5;
+            color: #fff;
+         }
+      }
+   }
+
+   &.product2 {
+      & > span:nth-of-type(1) {
+         color: #11f2c5;
+      }
+
+      & > button {
+         color: #11f2c5;
+         border-color: #11f2c5;
+
+         &:hover {
+            background: #11f2c5;
+            color: #fff;
+         }
+      }
+   }
+
+   &.product3 {
+      & > span:nth-of-type(1) {
+         color: #bde261;
+      }
+
+      & > button {
+         color: #bde261;
+         border-color: #bde261;
+
+         &:hover {
+            background: #bde261;
+            color: #fff;
+         }
+      }
    }
 }
