@@ -21,6 +21,7 @@
    flex-direction: column;
    margin: 0 auto;
 
+   // Title
    & > p {
       display: block;
       margin-bottom: 70px;
@@ -30,9 +31,7 @@
       font-size: 7.5rem;
       transition: font-size 0.3s ease-in-out;
       transform-origin: 65% 70%;
-      opacity: 0;
 
-      animation: animation0 0.7s ease-in-out 0.3s forwards;
       // transform: scale(0.1);
    }
 
@@ -65,6 +64,52 @@
          margin-bottom: 16px;
       }
    }
+
+   // ACTIVE ANIMATION
+   &.active {
+      & > p {
+         opacity: 0;
+         animation: animation0 0.7s ease-in-out 0.3s forwards;
+      }
+
+      & > .content {
+         & > img {
+            animation: animation3 0.7s ease-in-out;
+         }
+
+         & > .contentBlock1 {
+            animation: animation1 1.3s ease-in-out;
+         }
+
+         & > .contentBlock2 {
+            animation: animation2 1.3s ease-in-out;
+         }
+
+         @media (max-width: 1200px) {
+            & > img {
+               animation: animation3-1 0.7s ease-in-out;
+            }
+
+            & > .contentBlock1 {
+               animation: animation1-1 0.7s ease-in-out;
+            }
+
+            & > .contentBlock2 {
+               animation: animation2-1 0.7s ease-in-out;
+            }
+         }
+
+         @media (max-width: 768px) {
+            & > .contentBlock1 {
+               animation: animation1-1 0.7s ease-in-out;
+            }
+
+            & > .contentBlock2 {
+               animation: animation2-1 0.7s ease-in-out;
+            }
+         }
+      }
+   }
 }
 
 .content {
@@ -81,7 +126,6 @@
       display: block;
       width: 100%;
 
-      animation: animation3 0.7s ease-in-out;
       // transform: scale(0.3);
    }
 
@@ -101,7 +145,6 @@
          width: 316px;
          transform: translate(50%, -50%) scale(1);
 
-         animation: animation3-1 0.7s ease-in-out;
          // transform: translate(50%, -50%) scale(0.1);
       }
    }
@@ -146,16 +189,12 @@
       top: 0;
       left: 0;
       transform: translate(-100%, -7%);
-
-      animation: animation1 1.3s ease-in-out;
    }
 
    &.contentBlock2 {
       bottom: 0;
       right: 0;
       transform: translate(80%, 90%);
-
-      animation: animation2 1.3s ease-in-out;
    }
 
    // tablet
@@ -166,16 +205,12 @@
          top: 0;
          left: 0;
          transform: translate(0, 0);
-
-         animation: animation1-1 1.3s ease-in-out;
       }
 
       &.contentBlock2 {
          bottom: 0;
          right: 0;
          transform: translate(0, 0);
-
-         animation: animation2-1 1.3s ease-in-out;
       }
    }
 
@@ -187,16 +222,12 @@
          top: 0;
          left: 0;
          transform: translate(0, 0);
-
-         animation: animation1-1 1.3s ease-in-out;
       }
 
       &.contentBlock2 {
          bottom: 10%;
          left: 0;
          transform: translate(0, 0);
-
-         animation: animation2-1 1.3s ease-in-out;
       }
    }
 }

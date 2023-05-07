@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from './style.module.scss'
 
 function Slide2() {
-   const [active] = useState(false)
+   const [active] = useState(true)
 
    return (
       <section className={`${styles.section} ${styles.section2}`}>
@@ -39,7 +39,7 @@ function Slide2() {
                </div>
             </div>
          </div>
-         <div className={styles.main2}>
+         <div className={`${styles.main2} ${active ? styles.active : ''}`}>
             <p className={styles.title}>Specifications</p>
 
             <div className={`${styles.contentBlock} ${styles.contentBlock1}`}>

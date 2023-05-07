@@ -170,7 +170,7 @@
    @media (max-height: 391px) {
       gap: 1em;
 
-      & .title {
+      & > .title {
          font-size: 2.5rem;
       }
    }
@@ -191,6 +191,17 @@
          font-size: 1rem;
          font-family: 'Source Sans Pro', sans-serif;
          line-height: 1.5em;
+      }
+   }
+
+   // ACTIVE ANIMATION
+   &.active {
+      & > .title {
+         animation: animation0 0.7s ease-in-out;
+      }
+
+      & > .contentBlock {
+         animation: animation2 0.7s ease-in-out;
       }
    }
 }
