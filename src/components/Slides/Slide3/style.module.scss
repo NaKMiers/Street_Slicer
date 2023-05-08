@@ -68,14 +68,18 @@
 
    // ACTIVE ANIMATION
    &.active {
+      --duration1: 0.7s;
+      --duration2: 1.3s;
+      --delay1: 0.3s;
+
       & > p {
          opacity: 0;
-         animation: animation0 0.7s ease-in-out 0.3s forwards;
+         animation: animation0 var(--duration1) ease-in-out var(--delay1) forwards;
       }
 
       & > .content {
          & > img {
-            animation: animation3 0.7s ease-in-out;
+            animation: animation3 var(--duration1) ease-in-out;
          }
 
          & > .contentBlock1 {
@@ -88,25 +92,25 @@
 
          @media (max-width: 1200px) {
             & > img {
-               animation: animation3-1 0.7s ease-in-out;
+               animation: animation3-1 var(--duration1) ease-in-out;
             }
 
             & > .contentBlock1 {
-               animation: animation1-1 0.7s ease-in-out;
+               animation: animation1-1 var(--duration1) ease-in-out;
             }
 
             & > .contentBlock2 {
-               animation: animation2-1 0.7s ease-in-out;
+               animation: animation2-1 var(--duration1) ease-in-out;
             }
          }
 
          @media (max-width: 768px) {
             & > .contentBlock1 {
-               animation: animation1-1 0.7s ease-in-out;
+               animation: animation1-1 var(--duration1) ease-in-out;
             }
 
             & > .contentBlock2 {
-               animation: animation2-1 0.7s ease-in-out;
+               animation: animation2-1 var(--duration1) ease-in-out;
             }
          }
       }

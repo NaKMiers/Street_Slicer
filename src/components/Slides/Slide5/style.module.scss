@@ -24,8 +24,105 @@
    @media (max-height: 391px) {
       width: 85%;
    }
+
+   // ACTIVE ANIMATION
+   &.active {
+      --duration1: 0.8s;
+      --duration2: 0.5s;
+      --delay1: 0.5s;
+
+      & > .title {
+         opacity: 0;
+         animation: animation0 var(--duration1) ease-in-out var(--delay1) forwards;
+      }
+
+      & > .productWrap > .product1 {
+         & > .image {
+            opacity: 0;
+            animation: animation1 var(--duration1) ease-in-out var(--delay1) forwards;
+         }
+
+         & > span:nth-of-type(1) {
+            opacity: 0;
+            animation: animation1 var(--duration1) ease-in-out var(--delay1) forwards;
+         }
+
+         & > span:nth-of-type(2) {
+            opacity: 0;
+            animation: animation1 var(--duration1) ease-in-out var(--delay1) forwards;
+         }
+
+         & > button {
+            animation: animationBtn var(--duration2) ease-in-out;
+         }
+
+         // mobile
+         @media (max-width: 768px) {
+            & > button {
+               animation: none;
+            }
+         }
+      }
+
+      & > .productWrap > .product2 {
+         & > .image {
+            opacity: 0;
+            animation: animation2-0 var(--duration1) ease-in-out var(--delay1) forwards;
+         }
+
+         & > span:nth-of-type(1) {
+            opacity: 0;
+            animation: animation2-1 var(--duration1) ease-in-out var(--delay1) forwards;
+         }
+
+         & > span:nth-of-type(2) {
+            opacity: 0;
+            animation: animation2-2 var(--duration1) ease-in-out var(--delay1) forwards;
+         }
+
+         & > button {
+            animation: animationBtn var(--duration2) ease-in-out;
+         }
+
+         // mobile
+         @media (max-width: 768px) {
+            & > button {
+               animation: none;
+            }
+         }
+      }
+
+      & > .productWrap > .product3 {
+         & > .image {
+            opacity: 0;
+            animation: animation3 var(--duration1) ease-in-out var(--delay1) forwards;
+         }
+
+         & > span:nth-of-type(1) {
+            opacity: 0;
+            animation: animation3 var(--duration1) ease-in-out var(--delay1) forwards;
+         }
+
+         & > span:nth-of-type(2) {
+            opacity: 0;
+            animation: animation3 var(--duration1) ease-in-out var(--delay1) forwards;
+         }
+
+         & > button {
+            animation: animationBtn var(--duration2) ease-in-out;
+         }
+
+         // mobile
+         @media (max-width: 768px) {
+            & > button {
+               animation: none;
+            }
+         }
+      }
+   }
 }
 
+// Title
 .title {
    max-width: 665px;
    font-size: 2.25em;
@@ -238,5 +335,87 @@
             color: #fff;
          }
       }
+   }
+}
+
+// title
+@keyframes animation0 {
+   from {
+      opacity: 0;
+      transform: translateY(-100%);
+   }
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+// product1
+@keyframes animation1 {
+   from {
+      opacity: 0;
+      transform: translateX(30vw);
+   }
+   to {
+      opacity: 1;
+      transform: translateX(0);
+   }
+}
+
+// product2
+@keyframes animation2-0 {
+   from {
+      opacity: 0;
+      transform: translateY(38vh);
+   }
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+// product2
+@keyframes animation2-1 {
+   from {
+      opacity: 0;
+      transform: translateY(6vh);
+   }
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+// product2
+@keyframes animation2-2 {
+   from {
+      opacity: 0;
+      transform: translateY(4vh);
+   }
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+// product3
+@keyframes animation3 {
+   from {
+      opacity: 0;
+      transform: translateX(-30vw);
+   }
+   to {
+      opacity: 1;
+      transform: translateX(0);
+   }
+}
+
+// order button
+@keyframes animationBtn {
+   from {
+      transform: translateY(20vh);
+   }
+   to {
+      transform: translateY(0);
    }
 }

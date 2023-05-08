@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from './style.module.scss'
 
 function Slide1() {
-   const [active] = useState(false)
+   const [active] = useState(true)
 
    return (
       <section className={`${styles.section} ${styles.section1}`}>

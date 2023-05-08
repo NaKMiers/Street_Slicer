@@ -15,6 +15,8 @@ function Slider({ slide, handleSlide, isMenuOpen }) {
    useEffect(() => {
       const url = new URL(window.location.href)
       setCurPath(url.hash)
+      const title = paths.find(path => path.path === url.hash).label
+      document.title = title
    }, [])
 
    // set initial slide base on current path

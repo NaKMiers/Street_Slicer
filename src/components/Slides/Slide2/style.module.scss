@@ -41,8 +41,6 @@
       transition: font-size 0.3s ease-in-out;
       transform-origin: left;
 
-      // transform: scale(0.2);
-
       @media (max-width: 1200px) {
          top: 40%;
          font-size: 5.5rem;
@@ -75,22 +73,16 @@
       &.contentBlock1 {
          top: 14%;
          left: 50%;
-
-         // transform: translateY(114%);
       }
 
       &.contentBlock2 {
          bottom: 10%;
          left: 40%;
-
-         // transform: translateY(-105%);
       }
 
       &.contentBlock3 {
          bottom: 25%;
          right: 11.5%;
-
-         // transform: translateX(-200%);
       }
    }
 
@@ -129,22 +121,29 @@
       }
    }
 
+   // ACTIVE ANIMATION
    &.active {
+      --duration1: 0.7s;
+      --duration2: 0.68s;
+      --duration3: 0.65s;
+      --duration4: 0.62s;
+      --delay1: 0s;
+
       & .title {
-         animation: animation0 0.7s ease-in-out;
+         animation: animation0 var(--duration1) ease-in-out;
       }
 
       & .contentBlock {
          &.contentBlock1 {
-            animation: animation1 0.68s ease-in-out;
+            animation: animation1 var(--duration2) ease-in-out;
          }
 
          &.contentBlock2 {
-            animation: animation2 0.65s ease-in-out;
+            animation: animation2 var(--duration3) ease-in-out;
          }
 
          &.contentBlock3 {
-            animation: animation3 0.62s ease-in-out;
+            animation: animation3 var(--duration4) ease-in-out;
          }
       }
    }
@@ -197,12 +196,15 @@
 
    // ACTIVE ANIMATION
    &.active {
+      --duration1: 1s;
+      --delay1: 0s;
+
       & > .title {
-         animation: animation0 0.7s ease-in-out;
+         animation: animation0 var(--duration1) ease-in-out;
       }
 
       & > .contentBlock {
-         animation: animation2 0.7s ease-in-out;
+         animation: animation2 var(--duration1) ease-in-out;
       }
    }
 }

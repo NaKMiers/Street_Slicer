@@ -78,12 +78,15 @@
 
    // ACTIVE ANIMATION
    &.active {
+      --duration1: 0.8s;
+      --delay1: 0s;
+
       & > p:nth-of-type(1) {
-         animation: animation1 0.7s ease-in-out;
+         animation: animation1 var(--duration1) ease-in-out;
       }
 
       & > p:nth-of-type(2) {
-         animation: animation2 0.7s ease-in-out;
+         animation: animation2 var(--duration1) ease-in-out;
       }
    }
 }

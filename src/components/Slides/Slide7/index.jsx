@@ -5,13 +5,12 @@ import SubSlide from '../SubSlide'
 import styles from './style.module.scss'
 import { subSlides } from '../../../data'
 
-const slideLength = 3
-
 function Slide7() {
    const [isSliding, setSliding] = useState(false)
    const [slides, setSlides] = useState([...subSlides])
    const [active] = useState(false)
    const slideTrack = useRef(null)
+   const slideLength = subSlides.length
 
    const [slide, setSlide] = useState(1)
 
@@ -52,7 +51,7 @@ function Slide7() {
             setSliding(false)
          }, 1050) // slide duration: 1s
       }
-   }, [isSliding, slide, slides])
+   }, [isSliding, slide, slides, slideLength])
 
    const prevSlide = useCallback(() => {
       if (!isSliding) {
@@ -87,7 +86,7 @@ function Slide7() {
             setSliding(false)
          }, 1050) // slide duration: 1s
       }
-   }, [isSliding, slide, slides])
+   }, [isSliding, slide, slides, slideLength])
 
    return (
       <section className={`${styles.section} ${styles.section7}`}>

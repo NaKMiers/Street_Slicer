@@ -6,7 +6,7 @@ import Slider from './components/Slider'
 import { maxSlideIndex, paths } from './data'
 
 function App() {
-   const [slide, setSlide] = useState(1)
+   const [slide, setSlide] = useState(6)
    const [openMenu, setOpenMenu] = useState(false)
 
    const handleSlide = useCallback((value, updatePath = true) => {
@@ -17,6 +17,7 @@ function App() {
          const previousURL = window.location.href.split('/').slice(0, -1).join('/')
          const nextPath = paths[index].path
          window.location.href = previousURL + '/' + nextPath
+         document.title = paths[index].label
       }
 
       setSlide(value)

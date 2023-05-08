@@ -3,7 +3,7 @@ import styles from './style.module.scss'
 import wheels from '../../../assets/imgs/wheels.webp'
 
 function Slide3() {
-   const [active] = useState(false)
+   const [active] = useState(true)
 
    return (
       <section className={`${styles.section} ${styles.section3}`}>

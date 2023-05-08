@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from './style.module.scss'
 
 function Slide6() {
-   const [active] = useState(false)
+   const [active] = useState(true)
 
    return (
       <section className={`${styles.section} ${styles.section6}`}>
@@ -12,7 +12,6 @@ function Slide6() {
             <p>Leave your email bown below and get 10$ discoiunt on delivery</p>
 
             <input className={styles.input} type='email' placeholder='Enter your email...*' />
-
             <button className={styles.submitBtn}>GET NOW</button>
          </div>
       </section>
