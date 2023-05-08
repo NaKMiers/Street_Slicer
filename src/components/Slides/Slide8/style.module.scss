@@ -12,3 +12,127 @@
       color: #fff;
    }
 }
+
+.main {
+   position: relative;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+
+   width: 100%;
+
+   & > p:nth-of-type(1) {
+      width: 90%;
+      margin: 20px 0 -50px;
+
+      font-size: 3.125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      transition: font-size 0.3s ease-in-out;
+
+      // tablet
+      @media (max-width: 1200px) {
+         margin: 44px 0 -32px;
+         font-size: 2.25rem;
+      }
+
+      // mobile
+      @media (max-width: 768px) {
+         margin: 42px 0 -16px;
+         font-size: 1.75rem;
+      }
+
+      // mobile horizontal
+      @media (max-height: 490px) {
+         margin: 42px 0 -16px;
+         font-size: 1.75rem;
+      }
+   }
+
+   // Title
+   & > p:nth-of-type(2) {
+      width: 90%;
+      color: #d8ef5b;
+
+      font-family: 'Courgette', cursive;
+      font-size: 7rem;
+      transition: font-size 0.3s ease-in-out;
+
+      // tablet
+      @media (max-width: 1200px) {
+         font-size: 5.5rem;
+      }
+
+      // mobile
+      @media (max-width: 768px) {
+         font-size: 3rem;
+      }
+
+      // mobile horizontal
+      @media (max-height: 490px) {
+         font-size: 3rem;
+      }
+   }
+
+   & > p:nth-of-type(3),
+   & > p:nth-of-type(4),
+   & > p:nth-of-type(5) {
+      max-width: 450px;
+      width: 80%;
+      color: #86bab4;
+
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      line-height: 38px;
+      letter-spacing: -0.5px;
+   }
+
+   & > p:nth-of-type(3) {
+      margin-top: 28px;
+
+      // mobile horizontal
+      @media (max-height: 490px) {
+         margin-top: 16px;
+      }
+   }
+
+   & > p:nth-of-type(4) {
+      margin-top: 40px;
+
+      // mobile horizontal
+      @media (max-height: 490px) {
+         margin-top: 16px;
+      }
+   }
+
+   & > p:nth-of-type(5) {
+      & > span {
+         color: #d8ef5b;
+         font-family: 'Source Sans Pro', sans-serif;
+      }
+   }
+}
+
+.socialWrap {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 1.2em;
+
+   width: 80%;
+   margin-top: 76px;
+
+   & > img {
+      width: 2em;
+   }
+
+   // mobile horizontal
+   @media (max-height: 490px) {
+      margin-top: 28px;
+   }
+}
