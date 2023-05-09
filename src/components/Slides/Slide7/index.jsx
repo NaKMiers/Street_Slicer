@@ -5,14 +5,25 @@ import SubSlide from '../SubSlide'
 import styles from './style.module.scss'
 import { subSlides } from '../../../data'
 
-function Slide7() {
+function Slide7({ active, seenSlides, setSeenSlides }) {
    const [isSliding, setSliding] = useState(false)
    const [slides, setSlides] = useState([...subSlides])
-   const [active] = useState(false)
-   const slideTrack = useRef(null)
    const slideLength = subSlides.length
-
    const [slide, setSlide] = useState(1)
+   const slideTrack = useRef(null)
+   const mainRef = useRef(null)
+
+   // handle animation
+   useEffect(() => {
+      if (active && !seenSlides?.includes(7)) {
+         mainRef.current.classList.add(styles.active)
+
+         setTimeout(() => {
+            mainRef.current.classList.remove(styles.active)
+            setSeenSlides(prev => (!prev.includes(7) ? [...prev, 7] : prev))
+         }, 2310) // max duration: 1.5s + delayAll: 0.8s = 2.3s;
+      }
+   }, [active, seenSlides, setSeenSlides])
 
    // change slide in interface
    useEffect(() => {
@@ -90,18 +101,20 @@ function Slide7() {
 
    return (
       <section className={`${styles.section} ${styles.section7}`}>
-         <div className={`${styles.main} ${active ? styles.active : ''}`}>
-            <button className={`${styles.iconBtn} ${styles.left}`} onClick={prevSlide}>
-               <FontAwesomeIcon icon={faAngleLeft} />
-            </button>
-            <button className={`${styles.iconBtn} ${styles.right}`} onClick={nextSlide}>
-               <FontAwesomeIcon icon={faAngleRight} />
-            </button>
+         <div className={styles.main} ref={mainRef}>
+            <div className={styles.slider}>
+               <button className={`${styles.iconBtn} ${styles.left}`} onClick={prevSlide}>
+                  <FontAwesomeIcon icon={faAngleLeft} />
+               </button>
+               <button className={`${styles.iconBtn} ${styles.right}`} onClick={nextSlide}>
+                  <FontAwesomeIcon icon={faAngleRight} />
+               </button>
 
-            <div className={styles.slideTrack} ref={slideTrack}>
-               {slides.map((subSlide, index) => (
-                  <SubSlide data={subSlide} key={index} blur={slide !== index + 1} />
-               ))}
+               <div className={styles.slideTrack} ref={slideTrack}>
+                  {slides.map((subSlide, index) => (
+                     <SubSlide data={subSlide} key={index} blur={slide !== index + 1} />
+                  ))}
+               </div>
             </div>
          </div>
       </section>

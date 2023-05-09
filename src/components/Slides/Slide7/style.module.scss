@@ -19,9 +19,25 @@
    width: 100%;
    max-width: 1170px;
    margin: 0 1.5rem;
-   overflow: hidden;
 
-   // background: #ccc; //
+   perspective: 500px;
+
+   // ACTIVE ANIMATION
+   &.active {
+      --duration1: 1.5s;
+      --delay1: 0s;
+      --delayAll: 0.8s;
+
+      & > .slider {
+         opacity: 0;
+         animation: animation0 var(--duration1) ease-in-out var(--delayAll) forwards;
+      }
+   }
+}
+
+.slider {
+   width: 100%;
+   overflow: hidden;
 }
 
 .iconBtn {
@@ -124,8 +140,28 @@
 }
 
 @keyframes animation0 {
-   from {
+   0% {
+      opacity: 0;
+      transform: rotateX(100deg);
    }
-   to {
+
+   25% {
+      opacity: 1;
+      transform: rotateX(-25deg);
+   }
+
+   50% {
+      opacity: 1;
+      transform: rotateX(12deg);
+   }
+
+   75% {
+      opacity: 1;
+      transform: rotateX(-6deg);
+   }
+
+   100% {
+      opacity: 1;
+      transform: rotateX(0deg);
    }
 }

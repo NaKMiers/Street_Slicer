@@ -6,7 +6,7 @@ import Slider from './components/Slider'
 import { maxSlideIndex, paths } from './data'
 
 function App() {
-   const [slide, setSlide] = useState(6)
+   const [slide, setSlide] = useState(1)
    const [openMenu, setOpenMenu] = useState(false)
 
    const handleSlide = useCallback((value, updatePath = true) => {

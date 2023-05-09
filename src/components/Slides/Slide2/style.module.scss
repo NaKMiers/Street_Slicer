@@ -12,7 +12,19 @@
       color: #fff;
    }
 
+   // tablet small
    @media (max-width: 900px) {
+      & .main {
+         display: none;
+      }
+
+      & .main2 {
+         display: flex;
+      }
+   }
+
+   // mobile horizontal
+   @media (max-height: 420px) {
       & .main {
          display: none;
       }
@@ -38,9 +50,9 @@
       font-family: 'Courgette', cursive;
       font-size: 7.5rem;
       color: #d8ef5b;
-      transition: font-size 0.3s ease-in-out;
       transform-origin: left;
 
+      // tablet
       @media (max-width: 1200px) {
          top: 40%;
          font-size: 5.5rem;
@@ -123,27 +135,31 @@
 
    // ACTIVE ANIMATION
    &.active {
-      --duration1: 0.7s;
-      --duration2: 0.68s;
-      --duration3: 0.65s;
-      --duration4: 0.62s;
-      --delay1: 0s;
+      --duration1: 1s;
+      --duration2: 0.98s;
+      --duration3: 0.95s;
+      --duration4: 0.92s;
+      --delayAll: 0.8s;
 
       & .title {
-         animation: animation0 var(--duration1) ease-in-out;
+         opacity: 0;
+         animation: animation0 var(--duration1) ease-in-out var(--delayAll) forwards;
       }
 
       & .contentBlock {
          &.contentBlock1 {
-            animation: animation1 var(--duration2) ease-in-out;
+            opacity: 0;
+            animation: animation1 var(--duration2) ease-in-out var(--delayAll) forwards;
          }
 
          &.contentBlock2 {
-            animation: animation2 var(--duration3) ease-in-out;
+            opacity: 0;
+            animation: animation2 var(--duration3) ease-in-out var(--delayAll) forwards;
          }
 
          &.contentBlock3 {
-            animation: animation3 var(--duration4) ease-in-out;
+            opacity: 0;
+            animation: animation3 var(--duration4) ease-in-out var(--delayAll) forwards;
          }
       }
    }
@@ -156,6 +172,11 @@
    align-items: center;
    gap: 2.5em;
 
+   // mobile horizontal
+   @media (max-height: 420px) {
+      gap: 0.5em;
+   }
+
    & .title {
       display: block;
       margin: 40px 0 12px;
@@ -163,22 +184,25 @@
       color: #d8ef5b;
       font-family: 'Courgette', cursive;
       font-size: 5.5rem;
-      transition: font-size 0.3s ease-in-out;
-   }
 
-   // mobile horizontal
-   @media (max-height: 391px) {
-      gap: 1em;
+      // mobile
+      @media (max-width: 768px) {
+         font-size: 12vw;
+      }
 
-      & > .title {
-         font-size: 2.5rem;
+      // mobile horizontal
+      @media (max-height: 420px) {
+         margin: 0 !important;
+         font-size: 12vh !important;
       }
    }
 
    & .contentBlock {
       max-width: 75%;
+
       &.contentBlock1 > p:nth-of-type(1) {
          font-size: 19px;
+         // font-size: 6.5vw;
       }
 
       & > p:nth-of-type(1) {
@@ -192,19 +216,51 @@
          font-family: 'Source Sans Pro', sans-serif;
          line-height: 1.5em;
       }
+
+      // mobile small
+      @media (max-width: 391px) {
+         &.contentBlock > p:nth-of-type(1) {
+            font-size: 4.2vw;
+         }
+
+         &.contentBlock > p:nth-of-type(2) {
+            font-size: 4.2vw;
+         }
+
+         &.contentBlock1 > p:nth-of-type(1) {
+            font-size: 4.95vw;
+         }
+      }
+
+      // mobile horizontal
+      @media (max-height: 420px) {
+         &.contentBlock > p:nth-of-type(1) {
+            font-size: 4.2vh;
+         }
+
+         &.contentBlock > p:nth-of-type(2) {
+            font-size: 4.2vh;
+         }
+
+         &.contentBlock1 > p:nth-of-type(1) {
+            font-size: 4.95vh;
+         }
+      }
    }
 
    // ACTIVE ANIMATION
    &.active {
       --duration1: 1s;
-      --delay1: 0s;
+      --delayAll: 0.5s;
 
       & > .title {
-         animation: animation0 var(--duration1) ease-in-out;
+         opacity: 0;
+         animation: animation0 var(--duration1) ease-in-out var(--delayAll) forwards;
       }
 
       & > .contentBlock {
-         animation: animation2 var(--duration1) ease-in-out;
+         opacity: 0;
+         animation: animation2 var(--duration1) ease-in-out var(--delayAll) forwards;
       }
    }
 }

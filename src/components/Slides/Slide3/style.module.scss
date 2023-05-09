@@ -22,6 +22,11 @@
    flex-direction: column;
    margin: 0 auto;
 
+   // tablet
+   @media (max-width: 1200px) {
+      width: 100%;
+   }
+
    // Title
    & > p {
       display: block;
@@ -33,34 +38,33 @@
       transition: font-size 0.3s ease-in-out;
       transform-origin: 65% 70%;
 
-      // transform: scale(0.1);
-   }
-
-   // tablet
-   @media (max-width: 1200px) {
-      width: 100%;
-
-      & > p {
+      // tablet
+      @media (max-width: 1200px) {
          font-size: 5.5rem;
       }
-   }
 
-   // mobile
-   @media (max-width: 768px) {
-      width: 100%;
-
-      & > p {
+      // mobile
+      @media (max-width: 768px) {
          font-size: 2.5rem;
          margin-top: 48px;
-         margin-bottom: 140px;
+         margin-bottom: 60px;
       }
-   }
 
-   // mobile horizontal
-   @media (max-height: 391px) {
-      width: 100%;
+      // mobile small
+      @media (max-width: 391px) {
+         margin-top: 0px;
+         margin-bottom: 60px;
+      }
 
-      & > p {
+      // tablet horizontal
+      @media (max-height: 601px) {
+         margin-top: 0px;
+         margin-bottom: 32px;
+      }
+
+      // mobile horizontal
+      @media (max-height: 391px) {
+         font-size: 2.5rem;
          margin-top: 0px;
          margin-bottom: 16px;
       }
@@ -69,48 +73,60 @@
    // ACTIVE ANIMATION
    &.active {
       --duration1: 0.7s;
-      --duration2: 1.3s;
+      --duration2: 1.2s;
       --delay1: 0.3s;
+      --delayAll: 0.8s;
 
       & > p {
          opacity: 0;
-         animation: animation0 var(--duration1) ease-in-out var(--delay1) forwards;
+         animation: animation0 var(--duration1) ease-in-out calc(var(--delay1) + var(--delayAll))
+            forwards;
       }
 
       & > .content {
          & > img {
-            animation: animation3 var(--duration1) ease-in-out;
+            opacity: 0;
+            animation: animation3 var(--duration1) ease-in-out var(--delayAll) forwards;
          }
 
          & > .contentBlock1 {
-            animation: animation1 1.3s ease-in-out;
+            opacity: 0;
+            animation: animation1 var(--duration2) ease-in-out var(--delayAll) forwards;
          }
 
          & > .contentBlock2 {
-            animation: animation2 1.3s ease-in-out;
+            opacity: 0;
+            animation: animation2 var(--duration2) ease-in-out var(--delayAll) forwards;
          }
 
+         // tablet
          @media (max-width: 1200px) {
             & > img {
-               animation: animation3-1 var(--duration1) ease-in-out;
+               opacity: 0;
+               animation: animation3-1 var(--duration1) ease-in-out var(--delayAll) forwards;
             }
 
             & > .contentBlock1 {
-               animation: animation1-1 var(--duration1) ease-in-out;
+               opacity: 0;
+               animation: animation1-1 var(--duration2) ease-in-out var(--delayAll) forwards;
             }
 
             & > .contentBlock2 {
-               animation: animation2-1 var(--duration1) ease-in-out;
+               opacity: 0;
+               animation: animation2-1 var(--duration2) ease-in-out var(--delayAll) forwards;
             }
          }
 
+         // mobile
          @media (max-width: 768px) {
             & > .contentBlock1 {
-               animation: animation1-1 var(--duration1) ease-in-out;
+               opacity: 0;
+               animation: animation1-1 var(--duration2) ease-in-out var(--delayAll) forwards;
             }
 
             & > .contentBlock2 {
-               animation: animation2-1 var(--duration1) ease-in-out;
+               opacity: 0;
+               animation: animation2-1 var(--duration2) ease-in-out var(--delayAll) forwards;
             }
          }
       }
@@ -130,8 +146,6 @@
    & > img {
       display: block;
       width: 100%;
-
-      // transform: scale(0.3);
    }
 
    // tablet
@@ -149,13 +163,11 @@
          display: block;
          width: 316px;
          transform: translate(50%, -50%) scale(1);
-
-         // transform: translate(50%, -50%) scale(0.1);
       }
    }
 
-   // mobile
-   @media (max-width: 768px) {
+   // mobile or tablet horrizontal
+   @media (max-width: 768px) or (max-height: 601px) {
       position: static;
       transform: translate(0, 0);
       width: 100%;
@@ -186,6 +198,39 @@
          font-size: 1rem;
          font-family: 'Source Sans Pro', sans-serif;
          line-height: 1.5em;
+      }
+
+      // mobile small
+      @media (max-width: 391px) {
+         &:nth-of-type(1) {
+            font-size: 0.8rem;
+         }
+
+         &:nth-of-type(2) {
+            font-size: 0.8rem;
+         }
+      }
+
+      // mobile very small
+      @media (max-width: 201px) {
+         &:nth-of-type(1) {
+            font-size: 6.5vw;
+         }
+
+         &:nth-of-type(2) {
+            font-size: 6.5vw;
+         }
+      }
+
+      // tablet horizontal
+      @media (max-height: 601px) {
+         &:nth-of-type(1) {
+            font-size: 2.65vh;
+         }
+
+         &:nth-of-type(2) {
+            font-size: 2.65vh;
+         }
       }
    }
 
@@ -219,8 +264,8 @@
       }
    }
 
-   // mobile
-   @media (max-width: 768px) {
+   // mobile or tablet horizontal
+   @media (max-width: 768px) or (max-height: 601px) {
       width: 80%;
 
       &.contentBlock1 {

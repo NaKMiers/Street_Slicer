@@ -16,13 +16,42 @@
 .main {
    padding: 0 3.5em;
 
+   // tablet
+   @media (max-width: 1200px) {
+      padding: 0 1.5em;
+   }
+
+   // mobile horizontal
+   @media (max-height: 391px) {
+      padding: 50px 1.5em 0;
+   }
+
    // Title
    & > p:nth-of-type(1) {
       display: block;
       font-family: 'Courgette', cursive;
       font-size: 7.5rem;
       color: #d8ef5b;
-      transition: font-size 0.3s ease-in-out;
+
+      // tablet
+      @media (max-width: 1200px) {
+         font-size: 5.5rem;
+      }
+
+      // mobile
+      @media (max-width: 768px) {
+         font-size: 2.5rem;
+      }
+
+      // mobile small
+      @media (max-width: 391px) {
+         font-size: 11vw;
+      }
+
+      // mobile horizontal
+      @media (max-height: 391px) {
+         font-size: 11vh;
+      }
    }
 
    & > p:nth-of-type(2) {
@@ -32,7 +61,29 @@
       text-transform: uppercase;
       letter-spacing: -0.5px;
       transform-origin: left;
-      transition: font-size 0.3s ease-in-out;
+
+      // tablet
+      @media (max-width: 1200px) {
+         font-size: 2.25rem;
+      }
+
+      // mobile
+      @media (max-width: 768px) {
+         font-size: 1.75rem;
+         margin: -8px 0 -6px;
+      }
+
+      // mobile small
+      @media (max-width: 391px) {
+         font-size: 8vw;
+         margin: -8px 0 -6px;
+      }
+
+      // mobile horizontal
+      @media (max-height: 391px) {
+         font-size: 8vh;
+         margin: -8px 0 -6px;
+      }
    }
 
    & > p:nth-of-type(3) {
@@ -40,32 +91,31 @@
       font-weight: 700;
       text-transform: uppercase;
       transform-origin: right;
-      transition: font-size 0.3s ease-in-out;
-   }
 
-   @media (max-width: 1200px) {
-      padding: 0 1.5em;
-
-      & > p:nth-of-type(1) {
-         font-size: 5.5rem;
-      }
-
-      & > p:nth-of-type(2) {
-         font-size: 2.25rem;
-      }
-
-      & > p:nth-of-type(3) {
+      // tablet
+      @media (max-width: 1200px) {
          font-size: 5rem;
       }
-   }
 
-   // mobile horizontal
-   @media (max-height: 391px) {
-      padding: 50px 1.5em 0;
+      // mobile
+      @media (max-width: 768px) {
+         font-size: 3.2rem;
+      }
+
+      // mobile small
+      @media (max-width: 391px) {
+         font-size: 14vw;
+      }
+
+      // mobile horizontal
+      @media (max-height: 391px) {
+         font-size: 14vh;
+      }
    }
 
    & > button {
       height: 50px;
+      max-width: 90%;
       padding: 0 24px;
       margin-top: 60px;
       border: 3px solid #fff;
@@ -82,6 +132,12 @@
          color: #000;
       }
 
+      // mobile small
+      @media (max-width: 391px) {
+         padding: 0 18px;
+         font-size: 6.2vw;
+      }
+
       // mobile horizontal
       @media (max-height: 391px) {
          margin-top: 8px;
@@ -94,38 +150,27 @@
       --duration2: 1.13s;
       --duration3: 1.16s;
       --duration4: 1.2s;
-      --delay: 0s;
+      --delay1: 0s;
+      --delayAll: 0.5s;
 
       & > p:nth-of-type(1) {
-         animation: animation0 var(--duration1) ease-in-out;
+         opacity: 0;
+         animation: animation0 var(--duration1) ease-in-out var(--delayAll) forwards;
       }
 
       & > p:nth-of-type(2) {
-         animation: animation2 var(--duration2) ease-in-out;
+         opacity: 0;
+         animation: animation2 var(--duration2) ease-in-out var(--delayAll) forwards;
       }
 
       & > p:nth-of-type(3) {
-         animation: animation3 var(--duration3) ease-in-out;
+         opacity: 0;
+         animation: animation3 var(--duration3) ease-in-out var(--delayAll) forwards;
       }
 
       & > button {
-         animation: animation4 var(--duration4) ease-in-out;
-      }
-   }
-
-   @media (max-width: 768px) {
-      & > p:nth-of-type(1) {
-         font-size: 2.5rem;
-      }
-
-      & > p:nth-of-type(2) {
-         font-size: 1.75rem;
-
-         margin: -8px 0 -6px;
-      }
-
-      & > p:nth-of-type(3) {
-         font-size: 3.2rem;
+         opacity: 0;
+         animation: animation4 var(--duration4) ease-in-out var(--delayAll) forwards;
       }
    }
 }

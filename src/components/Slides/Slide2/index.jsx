@@ -1,12 +1,26 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import styles from './style.module.scss'
 
-function Slide2() {
-   const [active] = useState(true)
+function Slide2({ active, seenSlides, setSeenSlides }) {
+   const mainRef1 = useRef(null)
+   const mainRef2 = useRef(null)
+
+   useEffect(() => {
+      if (active && !seenSlides?.includes(2)) {
+         mainRef1.current.classList.add(styles.active)
+         mainRef2.current.classList.add(styles.active)
+
+         setTimeout(() => {
+            mainRef1.current.classList.remove(styles.active)
+            mainRef2.current.classList.remove(styles.active)
+            setSeenSlides(prev => (!prev.includes(2) ? [...prev, 2] : prev))
+         }, 2010) // max duration: 1s + delayAll: 0.8s = 1.8s;
+      }
+   }, [active, seenSlides, setSeenSlides])
 
    return (
       <section className={`${styles.section} ${styles.section2}`}>
-         <div className={`${styles.main} ${active ? styles.active : ''}`}>
+         <div className={styles.main} ref={mainRef1}>
             <p className={styles.title}>Specifications</p>
             <div className={`${styles.contentBlock} ${styles.contentBlock1}`}>
                <p>POLYURETHANE WHEELS</p>
@@ -39,7 +53,8 @@ function Slide2() {
                </div>
             </div>
          </div>
-         <div className={`${styles.main2} ${active ? styles.active : ''}`}>
+
+         <div className={styles.main2} ref={mainRef2}>
             <p className={styles.title}>Specifications</p>
 
             <div className={`${styles.contentBlock} ${styles.contentBlock1}`}>

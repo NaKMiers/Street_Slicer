@@ -31,7 +31,7 @@
       font-size: 3.125rem;
       font-weight: 700;
       text-transform: uppercase;
-      transition: font-size 0.3s ease-in-out;
+      transform-origin: right center;
 
       // tablet
       @media (max-width: 1200px) {
@@ -45,10 +45,15 @@
          font-size: 1.75rem;
       }
 
+      // mobile small
+      @media (max-width: 391px) {
+         font-size: 7.15vw;
+      }
+
       // mobile horizontal
-      @media (max-height: 490px) {
-         margin: 42px 0 -16px;
-         font-size: 1.75rem;
+      @media (max-height: 491px) {
+         margin: 42px 0 -3.4vh;
+         font-size: 7.8vh;
       }
    }
 
@@ -59,7 +64,7 @@
 
       font-family: 'Courgette', cursive;
       font-size: 7rem;
-      transition: font-size 0.3s ease-in-out;
+      transform-origin: left center;
 
       // tablet
       @media (max-width: 1200px) {
@@ -71,9 +76,14 @@
          font-size: 3rem;
       }
 
+      // mobile small
+      @media (max-width: 391px) {
+         font-size: 12.35vw;
+      }
+
       // mobile horizontal
-      @media (max-height: 490px) {
-         font-size: 3rem;
+      @media (max-height: 491px) {
+         font-size: 9.8vh;
       }
    }
 
@@ -93,26 +103,89 @@
 
    & > p:nth-of-type(3) {
       margin-top: 28px;
+      transform-origin: 300% center;
+
+      // mobile small
+      @media (max-width: 391px) {
+         font-size: 6.15vw;
+      }
 
       // mobile horizontal
-      @media (max-height: 490px) {
+      @media (max-height: 491px) {
          margin-top: 16px;
+         font-size: 4.9vh;
       }
    }
 
    & > p:nth-of-type(4) {
       margin-top: 40px;
+      transform-origin: -100% center;
+
+      // mobile small
+      @media (max-width: 391px) {
+         font-size: 6.15vw;
+      }
 
       // mobile horizontal
-      @media (max-height: 490px) {
+      @media (max-height: 491px) {
          margin-top: 16px;
+         font-size: 4.9vh;
       }
    }
 
    & > p:nth-of-type(5) {
+      transform-origin: -100% center;
+
+      // mobile small
+      @media (max-width: 391px) {
+         font-size: 6.15vw;
+      }
+
+      // mobile horizontal
+      @media (max-height: 491px) {
+         font-size: 4.9vh;
+      }
+
       & > span {
          color: #d8ef5b;
          font-family: 'Source Sans Pro', sans-serif;
+      }
+   }
+
+   // ACTIVE ANIMATION
+   &.active {
+      --duration1: 1s;
+      --delay1: 0s;
+      --delayAll: 0.8s;
+
+      & > p:nth-of-type(1) {
+         opacity: 0;
+         animation: animation2 var(--duration1) ease-in-out var(--delayAll) forwards;
+      }
+
+      & > p:nth-of-type(2) {
+         opacity: 0;
+         animation: animation0 var(--duration1) ease-in-out var(--delayAll) forwards;
+      }
+
+      & > p:nth-of-type(3) {
+         opacity: 0;
+         animation: animation3 var(--duration1) ease-in-out var(--delayAll) forwards;
+      }
+
+      & > p:nth-of-type(4) {
+         opacity: 0;
+         animation: animation4 var(--duration1) ease-in-out var(--delayAll) forwards;
+      }
+
+      & > p:nth-of-type(5) {
+         opacity: 0;
+         animation: animation4 var(--duration1) ease-in-out var(--delayAll) forwards;
+      }
+
+      & > .socialWrap {
+         opacity: 0;
+         animation: animationBtn var(--duration1) ease-in-out var(--delayAll) forwards;
       }
    }
 }
@@ -126,13 +199,78 @@
 
    width: 80%;
    margin-top: 76px;
+   transform-origin: -50% center;
 
    & > img {
       width: 2em;
    }
 
    // mobile horizontal
-   @media (max-height: 490px) {
+   @media (max-height: 491px) {
       margin-top: 28px;
+
+      & > img {
+         width: 6.5vh;
+      }
+   }
+}
+
+@keyframes animation0 {
+   from {
+      opacity: 0;
+      transform: translate(0vw, -8vh) rotate(-45deg);
+   }
+
+   to {
+      opacity: 1;
+      transform: translate(0, 0) rotate(0);
+   }
+}
+
+@keyframes animation2 {
+   from {
+      opacity: 0;
+      transform: translate(0vw, 0vh) rotate(45deg);
+   }
+
+   to {
+      opacity: 1;
+      transform: translate(0, 0) rotate(0);
+   }
+}
+
+@keyframes animation3 {
+   from {
+      opacity: 1;
+      transform: translate(0vw, 0vh) rotate(-30deg);
+   }
+
+   to {
+      opacity: 1;
+      transform: translate(0, 0) rotate(0);
+   }
+}
+
+@keyframes animation4 {
+   from {
+      opacity: 1;
+      transform: translate(0vw, 0vh) rotate(35deg);
+   }
+
+   to {
+      opacity: 1;
+      transform: translate(0, 0) rotate(0);
+   }
+}
+
+@keyframes animationBtn {
+   from {
+      opacity: 1;
+      transform: translate(0vw, 0vh) rotate(32deg);
+   }
+
+   to {
+      opacity: 1;
+      transform: translate(0, 0) rotate(0);
    }
 }

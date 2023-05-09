@@ -1,13 +1,24 @@
-import React, { useState } from 'react'
-import styles from './style.module.scss'
+import React, { useEffect, useRef } from 'react'
 import wheels from '../../../assets/imgs/wheels.webp'
+import styles from './style.module.scss'
 
-function Slide3() {
-   const [active] = useState(true)
+function Slide3({ active, seenSlides, setSeenSlides }) {
+   const mainRef = useRef(null)
+
+   useEffect(() => {
+      if (active && !seenSlides?.includes(3)) {
+         mainRef.current.classList.add(styles.active)
+
+         setTimeout(() => {
+            mainRef.current.classList.remove(styles.active)
+            setSeenSlides(prev => (!prev.includes(3) ? [...prev, 3] : prev))
+         }, 2010) // max duration: 1.2s + delayAll: 0.8s = 2s;
+      }
+   }, [active, seenSlides, setSeenSlides])
 
    return (
       <section className={`${styles.section} ${styles.section3}`}>
-         <div className={`${styles.main} ${active ? styles.active : ''}`}>
+         <div className={styles.main} ref={mainRef}>
             <p>Wheels</p>
 
             <div className={styles.content}>

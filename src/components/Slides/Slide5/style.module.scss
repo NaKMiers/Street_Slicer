@@ -30,35 +30,42 @@
       --duration1: 0.8s;
       --duration2: 0.5s;
       --delay1: 0.5s;
+      --delayAll: 0.8s;
 
       & > .title {
          opacity: 0;
-         animation: animation0 var(--duration1) ease-in-out var(--delay1) forwards;
+         animation: animation0 var(--duration1) ease-in-out calc(var(--delay1) + var(--delayAll))
+            forwards;
       }
 
       & > .productWrap > .product1 {
          & > .image {
             opacity: 0;
-            animation: animation1 var(--duration1) ease-in-out var(--delay1) forwards;
+            animation: animation1 var(--duration1) ease-in-out calc(var(--delay1) + var(--delayAll))
+               forwards;
          }
 
          & > span:nth-of-type(1) {
             opacity: 0;
-            animation: animation1 var(--duration1) ease-in-out var(--delay1) forwards;
+            animation: animation1 var(--duration1) ease-in-out calc(var(--delay1) + var(--delayAll))
+               forwards;
          }
 
          & > span:nth-of-type(2) {
             opacity: 0;
-            animation: animation1 var(--duration1) ease-in-out var(--delay1) forwards;
+            animation: animation1 var(--duration1) ease-in-out calc(var(--delay1) + var(--delayAll))
+               forwards;
          }
 
          & > button {
-            animation: animationBtn var(--duration2) ease-in-out;
+            opacity: 0;
+            animation: animationBtn var(--duration2) ease-in-out var(--delayAll) forwards;
          }
 
          // mobile
          @media (max-width: 768px) {
             & > button {
+               opacity: 1;
                animation: none;
             }
          }
@@ -67,26 +74,31 @@
       & > .productWrap > .product2 {
          & > .image {
             opacity: 0;
-            animation: animation2-0 var(--duration1) ease-in-out var(--delay1) forwards;
+            animation: animation2-0 var(--duration1) ease-in-out calc(var(--delay1) + var(--delayAll))
+               forwards;
          }
 
          & > span:nth-of-type(1) {
             opacity: 0;
-            animation: animation2-1 var(--duration1) ease-in-out var(--delay1) forwards;
+            animation: animation2-1 var(--duration1) ease-in-out calc(var(--delay1) + var(--delayAll))
+               forwards;
          }
 
          & > span:nth-of-type(2) {
             opacity: 0;
-            animation: animation2-2 var(--duration1) ease-in-out var(--delay1) forwards;
+            animation: animation2-2 var(--duration1) ease-in-out calc(var(--delay1) + var(--delayAll))
+               forwards;
          }
 
          & > button {
-            animation: animationBtn var(--duration2) ease-in-out;
+            opacity: 0;
+            animation: animationBtn var(--duration2) ease-in-out var(--delayAll) forwards;
          }
 
          // mobile
          @media (max-width: 768px) {
             & > button {
+               opacity: 1;
                animation: none;
             }
          }
@@ -95,26 +107,31 @@
       & > .productWrap > .product3 {
          & > .image {
             opacity: 0;
-            animation: animation3 var(--duration1) ease-in-out var(--delay1) forwards;
+            animation: animation3 var(--duration1) ease-in-out calc(var(--delay1) + var(--delayAll))
+               forwards;
          }
 
          & > span:nth-of-type(1) {
             opacity: 0;
-            animation: animation3 var(--duration1) ease-in-out var(--delay1) forwards;
+            animation: animation3 var(--duration1) ease-in-out calc(var(--delay1) + var(--delayAll))
+               forwards;
          }
 
          & > span:nth-of-type(2) {
             opacity: 0;
-            animation: animation3 var(--duration1) ease-in-out var(--delay1) forwards;
+            animation: animation3 var(--duration1) ease-in-out calc(var(--delay1) + var(--delayAll))
+               forwards;
          }
 
          & > button {
-            animation: animationBtn var(--duration2) ease-in-out;
+            opacity: 0;
+            animation: animationBtn var(--duration2) ease-in-out var(--delayAll) forwards;
          }
 
          // mobile
          @media (max-width: 768px) {
             & > button {
+               opacity: 1;
                animation: none;
             }
          }
@@ -205,7 +222,7 @@
       @media (max-height: 391px) {
          margin-bottom: 0.5em;
          & > img {
-            max-width: 60px;
+            max-width: 18vh;
          }
       }
    }
@@ -218,11 +235,23 @@
       & > del {
          font-size: 19px;
          font-weight: 100;
+
+         // mobile very small
+         @media (max-width: 201px) {
+            margin-bottom: 0;
+            font-size: 8vw;
+         }
       }
 
       // mobile
       @media (max-width: 768px) {
          margin-bottom: 0.5em;
+      }
+
+      // mobile very small
+      @media (max-width: 201px) {
+         margin-bottom: 0.5em;
+         font-size: 12vw;
       }
 
       // tablet horizontal
@@ -233,6 +262,7 @@
       // mobile horizontal
       @media (max-height: 391px) {
          margin-bottom: 0.3em;
+         font-size: 6.2vh;
       }
    }
 
@@ -247,6 +277,12 @@
          margin-bottom: 0;
       }
 
+      // mobile very small
+      @media (max-width: 201px) {
+         margin-bottom: 0;
+         font-size: 8vw;
+      }
+
       // tablet horizontal
       @media (max-height: 620px) {
          margin-bottom: 0.8em;
@@ -255,6 +291,7 @@
       // mobile horizontal
       @media (max-height: 391px) {
          margin-bottom: 0.8em;
+         font-size: 4.4vh;
       }
    }
 
@@ -278,6 +315,12 @@
          margin: 22px 0 28px;
       }
 
+      // mobile very small
+      @media (max-width: 201px) {
+         margin-bottom: 1em;
+         width: 90%;
+      }
+
       // tablet horizontal
       @media (max-height: 620px) {
          margin: 0;
@@ -285,6 +328,7 @@
 
       // mobile horizontal
       @media (max-height: 391px) {
+         height: 11.5vh;
          margin: 0;
       }
    }
@@ -413,9 +457,11 @@
 // order button
 @keyframes animationBtn {
    from {
+      opacity: 1;
       transform: translateY(20vh);
    }
    to {
+      opacity: 1;
       transform: translateY(0);
    }
 }

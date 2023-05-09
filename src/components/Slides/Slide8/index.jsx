@@ -1,17 +1,28 @@
-import React, { useState } from 'react'
-import styles from './style.module.scss'
+import React, { useEffect, useRef } from 'react'
 import facebook from '../../../assets/imgs/facebook.png'
-import twitter from '../../../assets/imgs/twitter.png'
-import pinterest from '../../../assets/imgs/pinterest.png'
 import instagram from '../../../assets/imgs/instagram.png'
+import pinterest from '../../../assets/imgs/pinterest.png'
+import twitter from '../../../assets/imgs/twitter.png'
 import youtube from '../../../assets/imgs/youtube.png'
+import styles from './style.module.scss'
 
-function Slide8() {
-   const [active] = useState(false)
+function Slide8({ active, seenSlides, setSeenSlides }) {
+   const mainRef = useRef(null)
+
+   useEffect(() => {
+      if (active && !seenSlides?.includes(8)) {
+         mainRef.current.classList.add(styles.active)
+
+         setTimeout(() => {
+            mainRef.current.classList.remove(styles.active)
+            setSeenSlides(prev => (!prev.includes(8) ? [...prev, 8] : prev))
+         }, 2010) // max duration: 1s + delayAll: 0.8s = 1.8s;
+      }
+   }, [active, seenSlides, setSeenSlides])
 
    return (
       <section className={`${styles.section} ${styles.section8}`}>
-         <div className={`${styles.main} ${active ? styles.active : ''}`}>
+         <div className={styles.main} ref={mainRef}>
             <p>CONTACT US</p>
             <p>Visit our store</p>
 

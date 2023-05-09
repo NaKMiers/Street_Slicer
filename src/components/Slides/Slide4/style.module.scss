@@ -27,7 +27,6 @@
       font-family: 'Courgette', cursive;
       font-size: 6.5rem;
       color: #d8ef5b;
-      transition: font-size 0.3s ease-in-out;
       letter-spacing: 0.1rem;
    }
 
@@ -45,9 +44,9 @@
       text-transform: uppercase;
       letter-spacing: -0.5px;
       transform-origin: left;
-      transition: font-size 0.3s ease-in-out;
    }
 
+   // tablet
    @media (max-width: 1200px) {
       & > p:nth-of-type(1) {
          font-size: 4.5rem;
@@ -58,6 +57,7 @@
       }
    }
 
+   // mobile
    @media (max-width: 768px) {
       & > p:nth-of-type(1) {
          font-size: 3rem;
@@ -67,6 +67,7 @@
       }
    }
 
+   // mobile small
    @media (max-width: 421px) {
       & > p:nth-of-type(1) {
          margin-top: 24px;
@@ -76,17 +77,31 @@
       }
    }
 
+   // mobile very small
+   @media (max-width: 201px) {
+      & > p:nth-of-type(1) {
+         margin-top: 1.75vh;
+         font-size: 19vw;
+      }
+      & > p:nth-of-type(2) {
+         margin-top: -1.75vh;
+         font-size: 12vw;
+      }
+   }
+
    // ACTIVE ANIMATION
    &.active {
-      --duration1: 0.8s;
-      --delay1: 0s;
+      --duration1: 1s;
+      --delayAll: 0.8s;
 
       & > p:nth-of-type(1) {
-         animation: animation1 var(--duration1) ease-in-out;
+         opacity: 0;
+         animation: animation1 var(--duration1) ease-in-out var(--delayAll) forwards;
       }
 
       & > p:nth-of-type(2) {
-         animation: animation2 var(--duration1) ease-in-out;
+         opacity: 0;
+         animation: animation2 var(--duration1) ease-in-out var(--delayAll) forwards;
       }
    }
 }
@@ -108,29 +123,37 @@
 
 @keyframes animation1 {
    0% {
+      opacity: 1;
       transform: translate(-50%, 300%) scale(0.3);
    }
    40% {
+      opacity: 1;
       transform: translate(-50%, -40%) scale(1.1);
    }
    70% {
+      opacity: 1;
       transform: translate(-50%, -20%) scale(0.95);
    }
    100% {
+      opacity: 1;
       transform: translate(-50%, -50%) scale(1);
    }
 }
 @keyframes animation2 {
    0% {
+      opacity: 1;
       transform: translate(-50%, -1000%) scale(0.3);
    }
    40% {
+      opacity: 1;
       transform: translate(-50%, -80%) scale(1.1);
    }
    70% {
+      opacity: 1;
       transform: translate(-50%, -155%) scale(0.95);
    }
    100% {
+      opacity: 1;
       transform: translate(-50%, -125%) scale(1);
    }
 }

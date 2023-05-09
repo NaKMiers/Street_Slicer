@@ -8,6 +8,7 @@
    height: 100%;
    text-align: center;
    transition: opacity 0.3s ease-in-out;
+   opacity: 1;
 
    // mobile horizontal
    @media (max-height: 391px) {
@@ -27,9 +28,14 @@
          border-radius: 50%;
       }
 
+      // mobile small
+      @media (max-width: 391px) {
+         width: 33vw;
+      }
+
       // mobile horizontal
       @media (max-height: 391px) {
-         width: 64px;
+         width: 33vh;
       }
    }
 

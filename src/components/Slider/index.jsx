@@ -6,7 +6,9 @@ import { Slide1, Slide2, Slide3, Slide4, Slide5, Slide6, Slide7, Slide8 } from '
 function Slider({ slide, handleSlide, isMenuOpen }) {
    const [curPath, setCurPath] = useState('#welcome')
    const [isSliding, setSliding] = useState(false)
+   const [seenSlides, setSeenSlides] = useState([])
    const slideTrackRef = useRef(null)
+
    console.log('slide: ', slide)
 
    // SLIDER functions ------------------
@@ -15,8 +17,10 @@ function Slider({ slide, handleSlide, isMenuOpen }) {
    useEffect(() => {
       const url = new URL(window.location.href)
       setCurPath(url.hash)
-      const title = paths.find(path => path.path === url.hash).label
-      document.title = title
+      const path = paths.find(path => path.path === url.hash)
+      if (path) {
+         document.title = path.label
+      }
    }, [])
 
    // set initial slide base on current path
@@ -35,7 +39,6 @@ function Slider({ slide, handleSlide, isMenuOpen }) {
       // if last slide
       if (slide === slideLength) {
          handleSlide(maxSlideIndex)
-         console.log(11111)
 
          setTimeout(() => {
             slideTrackRef.current.style.transition = 'none'
@@ -55,7 +58,6 @@ function Slider({ slide, handleSlide, isMenuOpen }) {
       // if first slide
       if (slide === 1) {
          handleSlide(0)
-         console.log(22222)
 
          setTimeout(() => {
             slideTrackRef.current.style.transition = 'none'
@@ -126,14 +128,14 @@ function Slider({ slide, handleSlide, isMenuOpen }) {
             {/* first temporary */}
             <Slide8 temp />
 
-            <Slide1 />
-            <Slide2 />
-            <Slide3 />
-            <Slide4 />
-            <Slide5 />
-            <Slide6 />
-            <Slide7 />
-            <Slide8 />
+            <Slide1 active={slide === 1} seenSlides={seenSlides} setSeenSlides={setSeenSlides} />
+            <Slide2 active={slide === 2} seenSlides={seenSlides} setSeenSlides={setSeenSlides} />
+            <Slide3 active={slide === 3} seenSlides={seenSlides} setSeenSlides={setSeenSlides} />
+            <Slide4 active={slide === 4} seenSlides={seenSlides} setSeenSlides={setSeenSlides} />
+            <Slide5 active={slide === 5} seenSlides={seenSlides} setSeenSlides={setSeenSlides} />
+            <Slide6 active={slide === 6} seenSlides={seenSlides} setSeenSlides={setSeenSlides} />
+            <Slide7 active={slide === 7} seenSlides={seenSlides} setSeenSlides={setSeenSlides} />
+            <Slide8 active={slide === 8} seenSlides={seenSlides} setSeenSlides={setSeenSlides} />
 
             {/* last temporary */}
             <Slide1 temp />
