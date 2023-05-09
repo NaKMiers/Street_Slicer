@@ -31,7 +31,7 @@
       display: block;
       font-family: 'Courgette', cursive;
       font-size: 7.5rem;
-      color: #d8ef5b;
+      color: var(--primary);
 
       // tablet
       @media (max-width: 1200px) {

@@ -71,7 +71,7 @@
       font-weight: 300;
       font-family: 'Source Sans Pro', sans-serif;
       line-height: 36px;
-      color: #94d2d3;
+      color: var(--secondary);
 
       // mobile
       @media (max-width: 600px) {
@@ -90,7 +90,7 @@
       font-size: 4rem;
 
       & > svg > path {
-         color: #d8ef5b;
+         color: var(--primary);
       }
 
       // mobile

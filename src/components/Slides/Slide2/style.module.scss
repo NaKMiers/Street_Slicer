@@ -49,7 +49,7 @@
       display: block;
       font-family: 'Courgette', cursive;
       font-size: 7.5rem;
-      color: #d8ef5b;
+      color: var(--primary);
       transform-origin: left;
 
       // tablet
@@ -181,7 +181,7 @@
       display: block;
       margin: 40px 0 12px;
 
-      color: #d8ef5b;
+      color: var(--primary);
       font-family: 'Courgette', cursive;
       font-size: 5.5rem;
 

@@ -24,7 +24,7 @@ function Slide2({ active, seenSlides, setSeenSlides }) {
             <p className={styles.title}>Specifications</p>
             <div className={`${styles.contentBlock} ${styles.contentBlock1}`}>
                <p>POLYURETHANE WHEELS</p>
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+               <p>Polyurethane wheels are durable, grippy, perfect for tricks.</p>
                <div className={styles.pulse}>
                   <div />
                   <div />
@@ -34,7 +34,10 @@ function Slide2({ active, seenSlides, setSeenSlides }) {
             </div>
             <div className={`${styles.contentBlock} ${styles.contentBlock2}`}>
                <p>TRIAXIAL FIBERGLASS</p>
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+               <p>
+                  Our decks have triaxial fiberglass for strength and flexibility, ideal for all
+                  terrains.
+               </p>
                <div className={styles.pulse}>
                   <div />
                   <div />
@@ -44,7 +47,7 @@ function Slide2({ active, seenSlides, setSeenSlides }) {
             </div>
             <div className={`${styles.contentBlock} ${styles.contentBlock3}`}>
                <p>THREE COLOR STYLES</p>
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+               <p>Choose from three unique color styles to customize your skateboard to your liking.</p>
                <div className={styles.pulse}>
                   <div />
                   <div />
@@ -59,15 +62,18 @@ function Slide2({ active, seenSlides, setSeenSlides }) {
 
             <div className={`${styles.contentBlock} ${styles.contentBlock1}`}>
                <p>POLYURETHANE WHEELS</p>
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+               <p>Polyurethane wheels are durable, grippy, perfect for tricks.</p>
             </div>
             <div className={`${styles.contentBlock} ${styles.contentBlock3}`}>
                <p>THREE COLOR STYLES</p>
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+               <p>Choose from three unique color styles to customize your skateboard to your liking.</p>
             </div>
             <div className={`${styles.contentBlock} ${styles.contentBlock2}`}>
                <p>TRIAXIAL FIBERGLASS</p>
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+               <p>
+                  Our decks have triaxial fiberglass for strength and flexibility, ideal for all
+                  terrains.
+               </p>
             </div>
          </div>
       </section>

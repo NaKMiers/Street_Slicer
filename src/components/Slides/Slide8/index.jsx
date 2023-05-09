@@ -26,18 +26,28 @@ function Slide8({ active, seenSlides, setSeenSlides }) {
             <p>CONTACT US</p>
             <p>Visit our store</p>
 
-            <p>08 New Hampshire Avenue #100, New Yourk, DC 20037, United States</p>
-            <p>Phone: +1 916-875-2235</p>
+            <p>Phu Trung Ward, Tan Phu District, Ho Chi Minh City, Vietnam</p>
+            <p>Phone: +84 899-320-427</p>
             <p>
-               Email: <span>info@domain.tld</span>
+               Email: <span>diwas118151@gmail.com</span>
             </p>
 
             <div className={styles.socialWrap}>
-               <img src={facebook} alt='social' />
-               <img src={twitter} alt='social' />
-               <img src={pinterest} alt='social' />
-               <img src={instagram} alt='social' />
-               <img src={youtube} alt='social' />
+               <a href='https://facebook.com' target='_blank' rel='noreferrer'>
+                  <img src={facebook} alt='social' />
+               </a>
+               <a href='https://twitter.com' target='_blank' rel='noreferrer'>
+                  <img src={twitter} alt='social' />
+               </a>
+               <a href='https://pinterest.com' target='_blank' rel='noreferrer'>
+                  <img src={pinterest} alt='social' />
+               </a>
+               <a href='https://instagram.com' target='_blank' rel='noreferrer'>
+                  <img src={instagram} alt='social' />
+               </a>
+               <a href='https://youtube.com' target='_blank' rel='noreferrer'>
+                  <img src={youtube} alt='social' />
+               </a>
             </div>
          </div>
       </section>

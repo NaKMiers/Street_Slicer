@@ -1,3 +1,8 @@
+:root {
+   --primary: #d8ef5b;
+   --secondary: #86bab4;
+}
+
 * {
    margin: 0;
    padding: 0;

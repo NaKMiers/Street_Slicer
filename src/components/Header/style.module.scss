@@ -31,7 +31,7 @@
    align-items: center;
 
    height: 100%;
-   width: 10em;
+   width: 15em;
 
    transition: all 0.3s ease-in-out;
 
@@ -211,7 +211,7 @@
          text-transform: uppercase;
 
          &.active {
-            color: #d8ef5b;
+            color: var(--primary);
          }
       }
    }

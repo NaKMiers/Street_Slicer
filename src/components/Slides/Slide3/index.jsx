@@ -25,16 +25,16 @@ function Slide3({ active, seenSlides, setSeenSlides }) {
                <div className={`${styles.contentBlock} ${styles.contentBlock1}`}>
                   <p>CUSTOM FORMULA</p>
                   <p>
-                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                     incididunt ut labore et dolore magna aliqua.
+                     Our custom formula is specifically designed to enhance the performance and
+                     durability of our skateboard products.
                   </p>
                </div>
                <img src={wheels} alt='wheels' />
                <div className={`${styles.contentBlock} ${styles.contentBlock2}`}>
                   <p>ULTRA-WIDE CONTACT</p>
                   <p>
-                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                     incididunt ut labore et dolore magna aliqua.
+                     Our skateboard decks feature ultra-wide contact for enhanced stability and control,
+                     allowing for a smoother ride on any surface.
                   </p>
                </div>
             </div>

@@ -1,6 +1,7 @@
 import avt1 from '../assets/imgs/avt1.jpg'
 import avt2 from '../assets/imgs/avt2.jpg'
 import avt3 from '../assets/imgs/avt3.jpg'
+import avt4 from '../assets/imgs/avt4.jpg'
 
 export const paths = [
    { path: '#welcome', label: 'Welcome', default: true },
@@ -14,26 +15,46 @@ export const paths = [
 ]
 
 export const slideLength = paths.length
-
 export const maxSlideIndex = slideLength + 2 - 1
 
 export const subSlides = [
+   // {
+   //    avatar: avt1,
+   //    name: 'Oliver Martinez',
+   //    role: 'Creative Heads Inc.',
+   //    text: 'Creativity is breaking down the box and creating a new world.',
+   // },
+   // {
+   //    avatar: avt2,
+   //    name: 'Grace Kim',
+   //    role: 'Creative Heads Inc.',
+   //    text: 'Design is not just what it looks like and feels like. Design is how it works.',
+   // },
+   // {
+   //    avatar: avt3,
+   //    name: 'Ethan Baker',
+   //    role: 'Creative Heads Inc.',
+   //    text: 'The best way to predict the future is to create it.',
+   // },
+
    {
-      avatar: avt1,
-      name: 'Alex Burns',
-      role: 'Creatvive Heads Inc.',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      avatar: avt4,
+      name: 'Anh Khoa Nguyen',
+      role: 'Full Stack Developer',
+      text: "I'm Possible!",
    },
+
    {
-      avatar: avt2,
-      name: 'Alex Burns',
-      role: 'Creatvive Heads Inc.',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      avatar: avt4,
+      name: 'Anh Khoa Nguyen',
+      role: 'Full Stack Developer',
+      text: "I'm Possible!",
    },
+
    {
-      avatar: avt3,
-      name: 'Alex Burns',
-      role: 'Creatvive Heads Inc.',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      avatar: avt4,
+      name: 'Anh Khoa Nguyen',
+      role: 'Full Stack Developer',
+      text: "I'm Possible!",
    },
 ]

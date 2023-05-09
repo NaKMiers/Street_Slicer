@@ -60,7 +60,7 @@
    // Title
    & > p:nth-of-type(2) {
       width: 90%;
-      color: #d8ef5b;
+      color: var(--primary);
 
       font-family: 'Courgette', cursive;
       font-size: 7rem;
@@ -92,7 +92,7 @@
    & > p:nth-of-type(5) {
       max-width: 450px;
       width: 80%;
-      color: #86bab4;
+      color: var(--secondary);
 
       font-family: 'Source Sans Pro', sans-serif;
       font-size: 1.5rem;
@@ -147,7 +147,7 @@
       }
 
       & > span {
-         color: #d8ef5b;
+         color: var(--primary);
          font-family: 'Source Sans Pro', sans-serif;
       }
    }
@@ -201,7 +201,7 @@
    margin-top: 76px;
    transform-origin: -50% center;
 
-   & > img {
+   & > a > img {
       width: 2em;
    }
 
@@ -209,7 +209,7 @@
    @media (max-height: 491px) {
       margin-top: 28px;
 
-      & > img {
+      & > a > img {
          width: 6.5vh;
       }
    }
