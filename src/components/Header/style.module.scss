@@ -189,9 +189,14 @@
    width: 100%;
    text-align: center;
 
-   // mobile horizontal
+   // tablet horizontal
    @media (max-height: 712px) {
+      position: relative;
+      top: 52%;
+      transform: translateY(-50%);
+
       margin-top: var(--header-height);
+      padding-bottom: var(--header-height);
       max-height: calc(100vh - var(--header-height));
       overflow-y: scroll;
    }
