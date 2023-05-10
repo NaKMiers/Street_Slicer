@@ -18,39 +18,24 @@ export const slideLength = paths.length
 export const maxSlideIndex = slideLength + 2 - 1
 
 export const subSlides = [
-   // {
-   //    avatar: avt1,
-   //    name: 'Oliver Martinez',
-   //    role: 'Creative Heads Inc.',
-   //    text: 'Creativity is breaking down the box and creating a new world.',
-   // },
-   // {
-   //    avatar: avt2,
-   //    name: 'Grace Kim',
-   //    role: 'Creative Heads Inc.',
-   //    text: 'Design is not just what it looks like and feels like. Design is how it works.',
-   // },
-   // {
-   //    avatar: avt3,
-   //    name: 'Ethan Baker',
-   //    role: 'Creative Heads Inc.',
-   //    text: 'The best way to predict the future is to create it.',
-   // },
-
    {
-      avatar: avt4,
-      name: 'Anh Khoa Nguyen',
-      role: 'Full Stack Developer',
-      text: "I'm Possible!",
+      avatar: avt1,
+      name: 'Oliver Martinez',
+      role: 'Creative Heads Inc.',
+      text: 'Creativity is breaking down the box and creating a new world.',
    },
-
    {
-      avatar: avt4,
-      name: 'Anh Khoa Nguyen',
-      role: 'Full Stack Developer',
-      text: "I'm Possible!",
+      avatar: avt2,
+      name: 'Grace Kim',
+      role: 'Creative Heads Inc.',
+      text: 'Design is not just what it looks like and feels like. Design is how it works.',
    },
-
+   {
+      avatar: avt3,
+      name: 'Ethan Baker',
+      role: 'Creative Heads Inc.',
+      text: 'The best way to predict the future is to create it.',
+   },
    {
       avatar: avt4,
       name: 'Anh Khoa Nguyen',
