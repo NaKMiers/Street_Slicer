@@ -209,6 +209,15 @@
             color: var(--primary);
          }
       }
+
+      // mobile
+      @media (max-width: 768px) {
+         height: 3em;
+         line-height: 3em;
+         & > a {
+            font-size: 1.5rem;
+         }
+      }
    }
 
    & > ul.open {
