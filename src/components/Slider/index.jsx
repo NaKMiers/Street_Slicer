@@ -9,8 +9,6 @@ function Slider({ slide, handleSlide, isMenuOpen }) {
    const [seenSlides, setSeenSlides] = useState([])
    const slideTrackRef = useRef(null)
 
-   console.log('slide: ', slide)
-
    // SLIDER functions ------------------
 
    // set initial current path
@@ -95,10 +93,8 @@ function Slider({ slide, handleSlide, isMenuOpen }) {
          if (!isSliding) {
             setSliding(true)
             if (e.keyCode === 40) {
-               console.log('down')
                nextSlide()
             } else if (e.keyCode === 38) {
-               console.log('up')
                prevSlide()
             }
             setTimeout(() => {
@@ -116,7 +112,6 @@ function Slider({ slide, handleSlide, isMenuOpen }) {
       window.addEventListener('keydown', handleKeyDown)
 
       return () => {
-         console.log('cleanup')
          window.removeEventListener('wheel', handleWheel)
          window.removeEventListener('keydown', handleKeyDown)
       }

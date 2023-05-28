@@ -12,7 +12,6 @@ function App() {
    const handleSlide = useCallback((value, updatePath = true) => {
       // update path url
       if (updatePath) {
-         console.log('updatePath')
          let index = value === 0 ? paths.length - 1 : value === maxSlideIndex ? 0 : value - 1
          const previousURL = window.location.href.split('/').slice(0, -1).join('/')
          const nextPath = paths[index].path

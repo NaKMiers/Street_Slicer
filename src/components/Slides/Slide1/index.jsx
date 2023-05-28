@@ -5,7 +5,6 @@ function Slide1({ active, seenSlides, setSeenSlides }) {
    const mainRef = useRef(null)
 
    useEffect(() => {
-      console.log('seenSlides: ', seenSlides)
       if (active && !seenSlides?.includes(1)) {
          mainRef.current.classList.add(styles.active)
 
